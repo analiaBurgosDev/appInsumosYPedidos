@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pedidos - Tienda Artesanal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pedidos-page">
+  <main>
+    <h1>🧾 Pedidos</h1>
+
+    <section class="card">
+      <h2>Registrar / Editar pedido</h2>
+
+      <label>Fecha pedido
+        <input id="pedido-fecha" type="date" />
+      </label>
+
+      <label>Nombre cliente
+        <input id="pedido-cliente" type="text" placeholder="Nombre del cliente" />
+      </label>
+
+      <label>Producto pedido
+        <input id="pedido-producto" type="text" placeholder="producto solicitado"></input>
+      </label>
+
+      <label>Cantidad
+        <input id="pedido-cantidad" type="number" min="1" value="1" />
+      </label>
+
+      <label>Fecha de entrega
+        <input id="pedido-entrega" type="date" />
+      </label>
+
+      <label>Seña entregada
+        <input id="pedido-sena" type="number" step="0.01" value="0" />
+      </label>
+
+      <label>Saldo restante
+        <input id="pedido-saldo" type="number" step="0.01" value="0" />
+      </label>
+
+      <label>Medidas
+        <input id="pedido-medidas" type="text" placeholder="talla" />
+      </label>
+
+      <label>Estado
+        <select id="pedido-estado">
+          <option value="por empezar">Por empezar</option>
+          <option value="en proceso">En proceso</option>
+          <option value="finalizado">Finalizado</option>
+        </select>
+      </label>
+
+      <label>Comentarios
+        <textarea id="pedido-comentarios" rows="3" placeholder="Notas..."></textarea>
+      </label>
+
+      <div class="row">
+        <button id="btn-guardar-pedido">Guardar pedido</button>
+        <button id="btn-cancelar-edicion">Cancelar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pedidos </h2>
+      <ul id="lista-pedidos"></ul>
+    </section>
+
+    <p class="center">
+      <button onclick="location.href='index.html'">⬅ Volver</button>
+      <button id="btn-borrar-todos-pedidos" class="danger">Borrar todos los pedidos</button>
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

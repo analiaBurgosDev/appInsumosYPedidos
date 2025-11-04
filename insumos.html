@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Insumos - Tienda Artesanal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="insumos-page">
+  <main>
+    <h1>📦 Insumos</h1>
+
+    <section class="card">
+      <h2>Agregar insumo</h2>
+      <label>Categoría
+        <select id="categoria">
+          <option value="materia">Materia prima</option>
+          <option value="accesorio">Accesorios</option>
+          <option value="herramienta">Herramientas</option>
+        </select>
+      </label>
+
+      <label>Nombre
+        <input id="insumo-nombre" type="text" placeholder="ej: Hilo algodón" />
+      </label>
+
+      <label>Precio
+        <input id="insumo-precio" type="number" step="0.01" placeholder="0.00" />
+      </label>
+
+      <label>Color
+        <input id="insumo-color" type="text" placeholder="ej: azul" />
+      </label>
+
+      <div class="row">
+        <button id="btn-guardar-insumo">Guardar insumo</button>
+        <button id="btn-limpiar-insumo">Limpiar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Listas por categoría</h2>
+      <div class="listas">
+        <div>
+          <h3>🧵 Materia prima</h3>
+          <ul id="lista-materia"></ul>
+        </div>
+        <div>
+          <h3>🎀 Accesorios</h3>
+          <ul id="lista-accesorio"></ul>
+        </div>
+        <div>
+          <h3>🛠️ Herramientas</h3>
+          <ul id="lista-herramienta"></ul>
+        </div>
+      </div>
+    </section>
+
+    <p class="center">
+      <button onclick="location.href='index.html'">⬅ Volver</button>
+      <button id="btn-borrar-todo" class="danger">Borrar todos los insumos</button>
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

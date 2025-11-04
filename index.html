@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Artesanal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#b37ba4">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("✅ Service Worker registrado"))
+      .catch(err => console.error("❌ Error SW:", err));
+  }
+</script>
+
+</head>
+<body>
+  <h1>🧵 Tienda Artesanal</h1>
+
+  <nav>
+    <button onclick="mostrarSeccion('insumos')">📦 Insumos</button>
+    <button onclick="mostrarSeccion('pedidos')">🧺 Pedidos</button>
+  </nav>
+
+  <!-- SECCIÓN INSUMOS -->
+  <section id="insumos">
+    <h2>Registro de Insumos</h2>
+    <div class="formulario">
+      <select id="categoria">
+        <option value="">Seleccionar categoría</option>
+        <option value="materia prima">Materia Prima</option>
+        <option value="accesorios">Accesorios</option>
+        <option value="herramientas">Herramientas</option>
+      </select>
+      <input id="nombre" placeholder="Nombre del insumo">
+      <input id="precio" type="number" placeholder="Precio">
+      <input id="color" placeholder="Color">
+      <button onclick="guardarInsumo()">Guardar</button>
+    </div>
+
+    <div id="listas-insumos">
+      <h3>Materia Prima</h3>
+      <ul id="lista-materia-prima"></ul>
+
+      <h3>Accesorios</h3>
+      <ul id="lista-accesorios"></ul>
+
+      <h3>Herramientas</h3>
+      <ul id="lista-herramientas"></ul>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PEDIDOS -->
+  <section id="pedidos" style="display:none">
+    <h2>Registro de Pedidos</h2>
+    <div class="formulario">
+      <input id="fecha-pedido" type="date" placeholder="fecha del pedido">
+      <input id="cliente" placeholder="Nombre del cliente">
+      <input id="producto-pedido" placeholder="Producto pedido">
+      <input id="cantidad" type="number" placeholder="Cantidad">
+      <input id="fecha-entrega" type="date" placeholder="fecha de entrega">
+      <input id="seña" type="number" placeholder="Seña entregada">
+      <input id="saldo" type="number" placeholder="Saldo restante">
+      <input id="medidas" placeholder="Medidas (opcional)">
+      <select id="estado">
+        <option value="Por empezar">Por empezar</option>
+        <option value="En proceso">En proceso</option>
+        <option value="Finalizado">Finalizado</option>
+      </select>
+      <textarea id="comentarios" placeholder="Comentarios..."></textarea>
+      <button onclick="guardarPedido()">Guardar Pedido</button>
+    </div>
+
+    <h3>📅 Lista de Pedidos</h3>
+    <ul id="lista-pedidos"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
